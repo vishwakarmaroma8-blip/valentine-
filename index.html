@@ -1,105 +1,188 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>For Rudra 💗</title><style>
+<meta charset="UTF-8">
+<title>For Rudra ❤️</title>
+
+<style>
 body{
-  margin:0;
-  height:100vh;
-  background: linear-gradient(#ffd1dc,#ff9eb5);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family: 'Arial', sans-serif;
-  text-align:center;
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ffb6c1,#ff69b4);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
 }
 
 .container{
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  box-shadow:0 0 20px rgba(0,0,0,0.2);
-  max-width:330px;
+text-align:center;
+color:white;
+max-width:90%;
 }
 
-img{
-  width:220px;
-  border-radius:15px;
-  margin-bottom:10px;
-  object-fit:cover;
+.hidden{display:none;}
+
+video, img{
+max-width:90%;
+max-height:60vh;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+
+h1{
+font-size:2rem;
+margin:20px 0;
+}
+
+p{
+font-size:1.1rem;
+line-height:1.6;
+margin:15px 0;
+}
+
+.buttons{
+margin-top:20px;
 }
 
 button{
-  padding:12px 20px;
-  border:none;
-  border-radius:10px;
-  font-size:18px;
-  cursor:pointer;
-  margin:10px;
+padding:12px 25px;
+font-size:1.1rem;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
 }
 
 #yesBtn{
-  background:#ff4f87;
-  color:white;
-  transition:0.3s;
+background:#ff2f92;
+color:white;
 }
 
 #noBtn{
-  background:#ccc;
+background:white;
+color:#ff2f92;
 }
 
-#final{
-  display:none;
-  font-size:20px;
-  color:#ff2f6d;
+.fade{
+animation:fade 1s ease-in-out;
 }
 
-#message{
-  display:none;
-  font-size:15px;
-  color:#444;
-  margin-top:15px;
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
 }
-</style></head><body><!-- MUSIC --><iframe width="0" height="0" 
-src="https://www.youtube.com/embed/9E6b3swbnWg?autoplay=1&loop=1&playlist=9E6b3swbnWg" 
-frameborder="0" allow="autoplay"></iframe><div class="container">  <!-- IMAGE -->  <img src="Snapchat-395789213.jpg" alt="us">  <h2 id="question">Rudra 💗<br>Will you be my Valentine?</h2>  <div id="buttons">
-    <button id="yesBtn" onclick="yesClick()">Yes 💖</button>
-    <button id="noBtn" onclick="noClick()">No 🙄</button>
-  </div>  <!-- FIRST YES SCREEN -->  <div id="final">
-    Thank you 😭💗<br>
-    You make me the happiest.<br>
-    I love you Rudra 💕
-  </div>  <!-- LONG MESSAGE -->  <div id="message">
-    <p>
-      Even if we are going through a rough time right now,
-      I believe everything is going to be alright for us. 💗
-    </p>
-    <p>
-      Being long distance means we can't really do much on Valentine's Day,
-      but I just hope we can at least hop on a call and spend that time together. 📞💞
-    </p>
-    <p>
-      No matter the distance, no matter the phase,
-      it's always you for me. ❤️
-    </p>
-  </div>
-</div><script>
-let size = 1;
+</style>
+</head>
 
-function yesClick(){
-  document.getElementById("buttons").style.display="none";
-  document.getElementById("question").innerText="";
+<body>
 
-  document.getElementById("final").style.display="block";
+<!-- BACKGROUND MUSIC -->
+<iframe id="music" width="0" height="0"
+src="https://www.youtube.com/embed/9E6b3swbnWg?autoplay=1&loop=1&playlist=9E6b3swbnWg"
+frameborder="0" allow="autoplay"></iframe>
 
-  setTimeout(()=>{
-    document.getElementById("message").style.display="block";
-  }, 2000);
-}
+<div class="container">
 
-function noClick(){
-  size += 0.3;
-  document.getElementById("yesBtn").style.transform = `scale(${size})`;
-  document.getElementById("noBtn").innerText = "Think again 😏";
-  document.getElementById("question").innerText = "Rudra... think again 🥺💗";
-}
-</script></body>
+<!-- Intro Video -->
+<video id="introVideo" autoplay>
+<source src="lv_7469137041113075005_20251231163735.mp4" type="video/mp4">
+</video>
+
+<!-- His Image -->
+<img id="himImg" src="Snapchat-395789213.jpg" class="hidden fade">
+
+<!-- Proposal -->
+<div id="proposal" class="hidden fade">
+<h1>Will you be my Valentine, Rudra? 💗</h1>
+<div class="buttons">
+<button id="yesBtn">Yes 💖</button>
+<button id="noBtn">No 🙄</button>
+</div>
+</div>
+
+<!-- Thank You Screen -->
+<div id="thankYou" class="hidden fade">
+<h1>Thank you for choosing me as your Valentine 💗</h1>
+<p>You make me the happiest.<br>I love you, Rudra ❤️</p>
+</div>
+
+<!-- Final Image -->
+<img id="usImg" src="unnamed (1).png" class="hidden fade">
+
+<!-- Paragraph Message -->
+<div id="message" class="hidden fade">
+<p>
+rudra, I know we're going through tuff times but it doesn't make me love you any less.<br>
+We will survive this too and I'm there for you always.<br>
+I wish whatever the work you are doing rn you will soon quit it bcs yes I'm so worried about you<br>
+but let's keep everything aside.<br>
+I love you so much and you're safe,<br>
+I will give you the time and space<br>
+just know that I am not a phase.
+</p>
+</div>
+
+<!-- Ending Video -->
+<video id="endingVideo" class="hidden">
+<source src="VIDEO_85b23452-8220-4d8b-bc90-f7deb863c5cc.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<script>
+let yesSize = 1;
+
+const introVideo = document.getElementById("introVideo");
+const himImg = document.getElementById("himImg");
+const proposal = document.getElementById("proposal");
+const thankYou = document.getElementById("thankYou");
+const usImg = document.getElementById("usImg");
+const message = document.getElementById("message");
+const endingVideo = document.getElementById("endingVideo");
+const music = document.getElementById("music");
+
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+
+/* After intro video ends */
+introVideo.onended = () => {
+introVideo.classList.add("hidden");
+himImg.classList.remove("hidden");
+proposal.classList.remove("hidden");
+};
+
+/* NO button logic */
+noBtn.onclick = () => {
+yesSize += 0.3;
+yesBtn.style.transform = `scale(${yesSize})`;
+noBtn.innerText = "Think again 😏";
+};
+
+/* YES button logic */
+yesBtn.onclick = () => {
+proposal.classList.add("hidden");
+himImg.classList.add("hidden");
+
+thankYou.classList.remove("hidden");
+
+setTimeout(()=>{
+thankYou.classList.add("hidden");
+usImg.classList.remove("hidden");
+message.classList.remove("hidden");
+}, 3000);
+
+setTimeout(()=>{
+/* Stop music */
+music.src = "";
+/* Play ending video */
+endingVideo.classList.remove("hidden");
+endingVideo.play();
+}, 8000);
+};
+</script>
+
+</body>
 </html>
