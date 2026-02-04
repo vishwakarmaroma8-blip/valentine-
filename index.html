@@ -1,99 +1,105 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html>
 <head>
-<meta charset="UTF-8">
-<title>For Rudra 💖</title>
-<style>
+<title>For Rudra 💗</title><style>
 body{
   margin:0;
-  font-family:'Comic Sans MS', cursive;
-  background:linear-gradient(135deg,#ffb6c1,#ff69b4);
-  display:flex;
-  align-items:center;
-  justify-content:center;
   height:100vh;
-  overflow:hidden;
-}
-.container{
-  background:rgba(255,255,255,0.88);
-  padding:30px;
-  border-radius:22px;
+  background: linear-gradient(#ffd1dc,#ff9eb5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: 'Arial', sans-serif;
   text-align:center;
-  box-shadow:0 0 30px rgba(0,0,0,0.25);
 }
+
+.container{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,0.2);
+  max-width:330px;
+}
+
 img{
-  width:180px;
+  width:220px;
   border-radius:15px;
-  margin-bottom:15px;
+  margin-bottom:10px;
+  object-fit:cover;
 }
-h1{
-  color:#ff1493;
-}
-.buttons{
-  margin-top:20px;
-}
+
 button{
-  padding:12px 25px;
+  padding:12px 20px;
   border:none;
-  border-radius:25px;
+  border-radius:10px;
   font-size:18px;
-  margin:10px;
   cursor:pointer;
+  margin:10px;
+}
+
+#yesBtn{
+  background:#ff4f87;
+  color:white;
   transition:0.3s;
 }
-#yesBtn{
-  background:#ff1493;
-  color:white;
-}
+
 #noBtn{
-  background:#fff;
-  color:#ff1493;
-  border:2px solid #ff1493;
+  background:#ccc;
 }
-</style>
-</head>
-<body><!-- YouTube Embedded Background Music --><iframe width="0" height="0" 
-  src="https://www.youtube.com/embed/vGJTaP6anOU?autoplay=1&loop=1&playlist=vGJTaP6anOU"
-  frameborder="0" allow="autoplay">
-</iframe><div class="container">
-  <img src="photo.jpg" alt="us">
-  <h1>Rudra 💗</h1>
-  <h2>Will you be my Valentine? 🌸</h2>
-  <div class="buttons">
+
+#final{
+  display:none;
+  font-size:20px;
+  color:#ff2f6d;
+}
+
+#message{
+  display:none;
+  font-size:15px;
+  color:#444;
+  margin-top:15px;
+}
+</style></head><body><!-- MUSIC --><iframe width="0" height="0" 
+src="https://www.youtube.com/embed/9E6b3swbnWg?autoplay=1&loop=1&playlist=9E6b3swbnWg" 
+frameborder="0" allow="autoplay"></iframe><div class="container">  <!-- IMAGE -->  <img src="Snapchat-395789213.jpg" alt="us">  <h2 id="question">Rudra 💗<br>Will you be my Valentine?</h2>  <div id="buttons">
     <button id="yesBtn" onclick="yesClick()">Yes 💖</button>
-    <button id="noBtn" onclick="noClick()">No 🙃</button>
+    <button id="noBtn" onclick="noClick()">No 🙄</button>
+  </div>  <!-- FIRST YES SCREEN -->  <div id="final">
+    Thank you 😭💗<br>
+    You make me the happiest.<br>
+    I love you Rudra 💕
+  </div>  <!-- LONG MESSAGE -->  <div id="message">
+    <p>
+      Even if we are going through a rough time right now,
+      I believe everything is going to be alright for us. 💗
+    </p>
+    <p>
+      Being long distance means we can't really do much on Valentine's Day,
+      but I just hope we can at least hop on a call and spend that time together. 📞💞
+    </p>
+    <p>
+      No matter the distance, no matter the phase,
+      it's always you for me. ❤️
+    </p>
   </div>
 </div><script>
-let yesSize = 18;
-let noCount = 0;
+let size = 1;
 
 function yesClick(){
-  document.body.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;background:linear-gradient(135deg,#ffb6c1,#ff69b4);font-family:'Comic Sans MS';text-align:center;">
-  <h1 style="color:white;font-size:60px;">YES YES YES 💖💖💖</h1>
-  <p style="color:white;font-size:30px;">You just made me the happiest 🥹💗</p>
-  <p style="color:white;font-size:22px;">I love you Rudra 💕</p>
-  </div>`;
+  document.getElementById("buttons").style.display="none";
+  document.getElementById("question").innerText="";
+
+  document.getElementById("final").style.display="block";
+
+  setTimeout(()=>{
+    document.getElementById("message").style.display="block";
+  }, 2000);
 }
 
 function noClick(){
-  noCount++;
-  const yesBtn = document.getElementById('yesBtn');
-  const noBtn = document.getElementById('noBtn');
-
-  yesSize += 8;
-  yesBtn.style.fontSize = yesSize + 'px';
-
-  if(noCount % 2 === 1){
-    noBtn.innerText = "Think again 😏";
-  }else{
-    noBtn.innerText = "No 🙃";
-  }
+  size += 0.3;
+  document.getElementById("yesBtn").style.transform = `scale(${size})`;
+  document.getElementById("noBtn").innerText = "Think again 😏";
+  document.getElementById("question").innerText = "Rudra... think again 🥺💗";
 }
 </script></body>
 </html>
-<iframe 
-  width="0" 
-  height="0" 
-  src="https://www.youtube.com/embed/9E6b3swbnWg?autoplay=1&loop=1&playlist=9E6b3swbnWg" 
-  frameborder="0" 
-  allow="autoplay"
-></iframe>
