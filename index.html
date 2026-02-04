@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Rudra 💖</title>
+<style>
+body{
+  margin:0;
+  font-family:'Comic Sans MS', cursive;
+  background:linear-gradient(135deg,#ffb6c1,#ff69b4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  overflow:hidden;
+}
+.container{
+  background:rgba(255,255,255,0.85);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 0 30px rgba(0,0,0,0.2);
+}
+img{
+  width:180px;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+h1{
+  color:#ff1493;
+}
+.buttons{
+  margin-top:20px;
+}
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  font-size:18px;
+  margin:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+#yesBtn{
+  background:#ff1493;
+  color:white;
+}
+#noBtn{
+  background:#fff;
+  color:#ff1493;
+  border:2px solid #ff1493;
+}
+</style>
+</head>
+<body><audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio><div class="container">
+  <img src="photo.jpg" alt="us">
+  <h1>Rudra 💗</h1>
+  <h2>Will you be my Valentine? 🌸</h2>
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClick()">Yes 💖</button>
+    <button id="noBtn" onclick="noClick()">No 🙃</button>
+  </div>
+</div><script>
+let yesSize = 18;
+let noCount = 0;
+
+function yesClick(){
+  document.body.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;background:linear-gradient(135deg,#ffb6c1,#ff69b4);font-family:'Comic Sans MS';">
+  <h1 style="color:white;font-size:60px;">YES YES YES 💖💖💖</h1>
+  <p style="color:white;font-size:30px;">You just made me the happiest 🥹💗</p>
+  </div>`;
+}
+
+function noClick(){
+  noCount++;
+  const yesBtn = document.getElementById('yesBtn');
+  const noBtn = document.getElementById('noBtn');
+
+  yesSize += 8;
+  yesBtn.style.fontSize = yesSize + 'px';
+
+  if(noCount % 2 === 1){
+    noBtn.innerText = "Think again 😏";
+  }else{
+    noBtn.innerText = "No 🙃";
+  }
+}
+</script></body>
+</html>
