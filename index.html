@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rudra, Will You Be My Valentine? 💖</title>
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:pink;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-align:center;
+overflow:hidden;
+}
+.container{max-width:900px;padding:20px;}
+video, img{max-width:90%;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,0.2);}
+button{
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+margin:10px;
+cursor:pointer;
+transition:0.3s;
+}
+#yesBtn{background:#ff4f9a;color:white;}
+#noBtn{background:#444;color:white;}
+.hidden{display:none;}
+</style>
+</head>
+<body><!-- BACKGROUND MUSIC --><audio id="bgMusic" loop autoplay>
+  <source src="cant_help_falling_in_love.mp3" type="audio/mp3">
+</audio><div class="container"><!-- INTRO VIDEO --><video id="introVideo" autoplay muted playsinline>
+<source src="lv_7469137041113075005_20251231163735.mp4" type="video/mp4">
+</video><!-- HIM IMAGE --><img id="himImg" src="Snapchat-395789213.jpg" class="hidden"><!-- QUESTION --><div id="questionBox" class="hidden">
+<h1>Rudra, will you be my Valentine? 💕</h1>
+<button id="yesBtn">Yes 💖</button>
+<button id="noBtn">No 😭</button>
+</div><!-- THANK YOU SCREEN --><div id="thankYou" class="hidden">
+<img src="output-onlinetools (1).png"><h2>Thank you for choosing me as your Valentine 💞</h2>
+<p>You make me the happiest. I love you Rudra ❤️</p>
+</div><!-- PARAGRAPH SCREEN --><div id="para" class="hidden">
+<img src="unnamed (1).png">
+<p>
+rudra, I know we're going through tuff times but it doesn't make me love you any less. We will survive this too and I'm there for you always. I wish whatever the work you are doing rn you will soon quit it bcs yes I'm so worried about you but let's keep everything aside. I love you so much and you're safe, I will give you the time and space just know that I am not a phase.
+</p>
+</div><!-- ENDING VIDEO --><video id="endVideo" class="hidden" playsinline>
+<source src="VIDEO_85b23452-8220-4d8b-bc90-f7deb863c5cc.mp4" type="video/mp4">
+</video></div><script>
+const introVideo = document.getElementById('introVideo');
+const himImg = document.getElementById('himImg');
+const questionBox = document.getElementById('questionBox');
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+const thankYou = document.getElementById('thankYou');
+const para = document.getElementById('para');
+const endVideo = document.getElementById('endVideo');
+const music = document.getElementById('bgMusic');
+
+let yesSize = 1;
+
+// intro ends
+introVideo.onended = () =>{
+introVideo.classList.add('hidden');
+himImg.classList.remove('hidden');
+questionBox.classList.remove('hidden');
+}
+
+noBtn.onclick = ()=>{
+noBtn.innerText = "Think again 😭";
+yesSize += 0.3;
+yesBtn.style.transform = `scale(${yesSize})`;
+}
+
+yesBtn.onclick = ()=>{
+questionBox.classList.add('hidden');
+himImg.classList.add('hidden');
+thankYou.classList.remove('hidden');
+
+setTimeout(()=>{
+thankYou.classList.add('hidden');
+para.classList.remove('hidden');
+},4000);
+
+setTimeout(()=>{
+para.classList.add('hidden');
+music.pause(); // stop song
+endVideo.classList.remove('hidden');
+endVideo.play();
+},9000);
+}
+</script></body>
+</html>
